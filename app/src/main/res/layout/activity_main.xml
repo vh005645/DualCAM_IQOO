@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Chế độ ẢNH: camera sau toàn màn hình -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Chế độ VIDEO: khung xem trước đã ghép sẵn (đúng như video sẽ ghi) -->
+    <SurfaceView
+        android:id="@+id/surfaceComposite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- Chế độ ẢNH: camera trước ở góc nhỏ -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewFront"
+        android:layout_width="110dp"
+        android:layout_height="146dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chế độ: Ảnh" />
+
+            <Button
+                android:id="@+id/btnRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Độ phân giải: 720p"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAction"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Chụp" />
+    </LinearLayout>
+</FrameLayout>
